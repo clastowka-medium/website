@@ -1,147 +1,357 @@
-<!DOCTYPE html>
+<!doctype html>
 <!-- Services & Pricing page. Header/footer are shared — see index.html.
      Pricing lives in TWO places that must match:
        1. The <article class="service"> cards below
        2. Carol's Square Appointments dashboard (source of truth for what the customer actually pays)
 -->
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Services &amp; Pricing — Carol Chase, Heart-Centered Mediumship</title>
-  <meta name="description" content="Book a 30-minute ($75) or 60-minute ($150) evidential mediumship reading with Carol Chase. Sessions held remotely via Zoom or phone." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+            Services &amp; Pricing — Carol Chase, Heart-Centered Mediumship
+        </title>
+        <meta
+            name="description"
+            content="Book a 30-minute ($75) or 60-minute ($150) evidential mediumship reading with Carol Chase. Sessions held remotely via Zoom or phone."
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <header class="site-header">
+            <div class="container header-inner">
+                <a href="index.html" class="brand">
+                    <span class="brand-name">Carol Chase</span>
+                    <span class="brand-tagline">Heart-Centered Mediumship</span>
+                </a>
+                <nav aria-label="Main navigation">
+                    <ul class="nav-list">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="faq.html">F.A.Q.</a></li>
+                        <li>
+                            <a href="services.html">Services &amp; Pricing</a>
+                        </li>
+                        <li><a href="grief-support.html">Grief Support</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li>
+                            <a href="services.html#booking" class="nav-cta"
+                                >Book a Reading</a
+                            >
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="brand">
-        <span class="brand-name">Carol Chase</span>
-        <span class="brand-tagline">Heart-Centered Mediumship</span>
-      </a>
-      <nav aria-label="Main navigation">
-        <ul class="nav-list">
-          <li><a href="about.html">About</a></li>
-          <li><a href="faq.html">F.A.Q.</a></li>
-          <li><a href="services.html">Services &amp; Pricing</a></li>
-          <li><a href="grief-support.html">Grief Support</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="services.html#booking" class="nav-cta">Book a Reading</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+        <main>
+            <section class="page-hero">
+                <div class="container narrow center">
+                    <p class="eyebrow">Services &amp; Pricing</p>
+                    <h1>Book a Mediumship Reading</h1>
+                    <p class="lede">
+                        Sessions are held remotely over Zoom or phone. For the
+                        most authentic experience, please do not share any
+                        personal details ahead of time &mdash; evidence will
+                        arise naturally during the sitting.
+                    </p>
+                </div>
+            </section>
 
-  <main>
+            <section class="section">
+                <div class="container">
+                    <div class="services">
+                        <article class="service">
+                            <h3>30-Minute Mediumship Reading</h3>
+                            <p class="service-price">$75</p>
+                            <p class="service-meta">
+                                30 min &middot; Remote via Zoom or phone
+                            </p>
+                            <p>
+                                A focused half-hour session bringing through
+                                evidential connection with Spirit.
+                            </p>
+                            <a href="#booking" class="btn btn-primary"
+                                >Book Now</a
+                            >
+                        </article>
 
-    <section class="page-hero">
-      <div class="container narrow center">
-        <p class="eyebrow">Services &amp; Pricing</p>
-        <h1>Book a Mediumship Reading</h1>
-        <p class="lede">
-          Sessions are held remotely over Zoom or phone. For the most authentic experience, please do not share any personal details ahead of time &mdash; evidence will arise naturally during the sitting.
-        </p>
-      </div>
-    </section>
+                        <article class="service">
+                            <h3>60-Minute Mediumship Reading</h3>
+                            <p class="service-price">$150</p>
+                            <p class="service-meta">
+                                60 min &middot; Remote via Zoom or phone
+                            </p>
+                            <p>
+                                A longer session with more time for evidence,
+                                messages, and feedback at the close.
+                            </p>
+                            <a href="#booking" class="btn btn-primary"
+                                >Book Now</a
+                            >
+                        </article>
+                    </div>
+                </div>
+            </section>
 
-    <section class="section">
-      <div class="container">
+            <section id="booking" class="section section-alt">
+                <div class="container narrow">
+                    <p class="eyebrow center">Schedule Online</p>
+                    <h2 class="center">Choose a time that works for you</h2>
 
-        <div class="services">
-          <article class="service">
-            <h3>30-Minute Mediumship Reading</h3>
-            <p class="service-price">$75</p>
-            <p class="service-meta">30 min &middot; Remote via Zoom or phone</p>
-            <p>A focused half-hour session bringing through evidential connection with Spirit.</p>
-            <a href="#booking" class="btn btn-primary">Book Now</a>
-          </article>
+                    <div class="booking-widget">
+                        <!-- Cal inline embed code begins -->
+                        <div
+                            style="width: 100%; height: 100%; overflow: scroll"
+                            id="my-cal-inline-60-minute-evidential-mediumship-reading"
+                        ></div>
+                        <script type="text/javascript">
+                            (function (C, A, L) {
+                                let p = function (a, ar) {
+                                    a.q.push(ar);
+                                };
+                                let d = C.document;
+                                C.Cal =
+                                    C.Cal ||
+                                    function () {
+                                        let cal = C.Cal;
+                                        let ar = arguments;
+                                        if (!cal.loaded) {
+                                            cal.ns = {};
+                                            cal.q = cal.q || [];
+                                            d.head.appendChild(
+                                                d.createElement("script"),
+                                            ).src = A;
+                                            cal.loaded = true;
+                                        }
+                                        if (ar[0] === L) {
+                                            const api = function () {
+                                                p(api, arguments);
+                                            };
+                                            const namespace = ar[1];
+                                            api.q = api.q || [];
+                                            if (typeof namespace === "string") {
+                                                cal.ns[namespace] =
+                                                    cal.ns[namespace] || api;
+                                                p(cal.ns[namespace], ar);
+                                                p(cal, [
+                                                    "initNamespace",
+                                                    namespace,
+                                                ]);
+                                            } else p(cal, ar);
+                                            return;
+                                        }
+                                        p(cal, ar);
+                                    };
+                            })(
+                                window,
+                                "https://app.cal.com/embed/embed.js",
+                                "init",
+                            );
+                            Cal(
+                                "init",
+                                "60-minute-evidential-mediumship-reading",
+                                { origin: "https://app.cal.com" },
+                            );
 
-          <article class="service">
-            <h3>60-Minute Mediumship Reading</h3>
-            <p class="service-price">$150</p>
-            <p class="service-meta">60 min &middot; Remote via Zoom or phone</p>
-            <p>A longer session with more time for evidence, messages, and feedback at the close.</p>
-            <a href="#booking" class="btn btn-primary">Book Now</a>
-          </article>
-        </div>
+                            Cal.ns["60-minute-evidential-mediumship-reading"](
+                                "inline",
+                                {
+                                    elementOrSelector:
+                                        "#my-cal-inline-60-minute-evidential-mediumship-reading",
+                                    config: {
+                                        layout: "month_view",
+                                        useSlotsViewOnSmallScreen: "true",
+                                    },
+                                    calLink:
+                                        "carol-chase/60-minute-evidential-mediumship-reading",
+                                },
+                            );
 
-      </div>
-    </section>
+                            Cal.ns["60-minute-evidential-mediumship-reading"](
+                                "ui",
+                                {
+                                    hideEventTypeDetails: false,
+                                    layout: "month_view",
+                                },
+                            );
+                        </script>
+                        <!-- Cal inline embed code ends -->
+                        <!-- Cal inline embed code begins -->
+                        <div
+                            style="width: 100%; height: 100%; overflow: scroll"
+                            id="my-cal-inline-30-minute-evidential-mediumship-reading"
+                        ></div>
+                        <script type="text/javascript">
+                            (function (C, A, L) {
+                                let p = function (a, ar) {
+                                    a.q.push(ar);
+                                };
+                                let d = C.document;
+                                C.Cal =
+                                    C.Cal ||
+                                    function () {
+                                        let cal = C.Cal;
+                                        let ar = arguments;
+                                        if (!cal.loaded) {
+                                            cal.ns = {};
+                                            cal.q = cal.q || [];
+                                            d.head.appendChild(
+                                                d.createElement("script"),
+                                            ).src = A;
+                                            cal.loaded = true;
+                                        }
+                                        if (ar[0] === L) {
+                                            const api = function () {
+                                                p(api, arguments);
+                                            };
+                                            const namespace = ar[1];
+                                            api.q = api.q || [];
+                                            if (typeof namespace === "string") {
+                                                cal.ns[namespace] =
+                                                    cal.ns[namespace] || api;
+                                                p(cal.ns[namespace], ar);
+                                                p(cal, [
+                                                    "initNamespace",
+                                                    namespace,
+                                                ]);
+                                            } else p(cal, ar);
+                                            return;
+                                        }
+                                        p(cal, ar);
+                                    };
+                            })(
+                                window,
+                                "https://app.cal.com/embed/embed.js",
+                                "init",
+                            );
+                            Cal(
+                                "init",
+                                "30-minute-evidential-mediumship-reading",
+                                { origin: "https://app.cal.com" },
+                            );
 
-    <section id="booking" class="section section-alt">
-      <div class="container narrow">
-        <p class="eyebrow center">Schedule Online</p>
-        <h2 class="center">Choose a time that works for you</h2>
+                            Cal.ns["30-minute-evidential-mediumship-reading"](
+                                "inline",
+                                {
+                                    elementOrSelector:
+                                        "#my-cal-inline-30-minute-evidential-mediumship-reading",
+                                    config: {
+                                        layout: "month_view",
+                                        useSlotsViewOnSmallScreen: "true",
+                                    },
+                                    calLink:
+                                        "carol-chase/30-minute-evidential-mediumship-reading",
+                                },
+                            );
 
-        <div class="booking-widget">
-          <!--
-            SQUARE BOOKING EMBED GOES HERE
-            Once Carol's Square Appointments account is set up, replace this
-            placeholder with the embed snippet from
-            Square dashboard → Online Booking → Share booking site → Embed.
-          -->
-          <!-- Start Square Appointments Embed Code -->
-          <script src='https://square.site/appointments/buyer/widget/as50isc8eqrkmk/LCR1QJ7HZC98K.js'></script>
-          <!-- End Square Appointments Embed Code -->
-        </div>
-      </div>
-    </section>
+                            Cal.ns["30-minute-evidential-mediumship-reading"](
+                                "ui",
+                                {
+                                    hideEventTypeDetails: false,
+                                    layout: "month_view",
+                                },
+                            );
+                        </script>
+                        <!-- Cal inline embed code ends -->
+                    </div>
+                </div>
+            </section>
 
-    <section class="section">
-      <div class="container narrow">
-        <h2>What to expect</h2>
-        <p>
-          In our 30-minute or 60-minute live Zoom session, I bring through clear details to help you recognize your spirit communicator(s). I will tell you exactly what I see, feel, hear, or experience in order to allow the spirit to provide their own identifying evidence.
-        </p>
-        <p>
-          I do not ask for the name of the person you hope to hear from. I also cannot guarantee a specific loved one will come through &mdash; spirit people who do step forward always come for your highest and best good. I recommend you take notes or audio-record the reading, because some details may make sense later.
-        </p>
-        <p>
-          During the evidential portion of the reading, please respond only with &ldquo;Yes&rdquo;, &ldquo;No&rdquo;, &ldquo;I don't know&rdquo;, &ldquo;I'm not sure&rdquo;, or &ldquo;Need more info&rdquo;. I'll always treat you and those in spirit with compassion and respect &mdash; messages are supportive and positive. Each reading reserves time at the end for feedback. I can't wait to work with you!
-        </p>
-        <p>
-          For a fuller list of common questions, see the <a href="faq.html">F.A.Q. page</a>.
-        </p>
+            <section class="section">
+                <div class="container narrow">
+                    <h2>What to expect</h2>
+                    <p>
+                        In our 30-minute or 60-minute live Zoom session, I bring
+                        through clear details to help you recognize your spirit
+                        communicator(s). I will tell you exactly what I see,
+                        feel, hear, or experience in order to allow the spirit
+                        to provide their own identifying evidence.
+                    </p>
+                    <p>
+                        I do not ask for the name of the person you hope to hear
+                        from. I also cannot guarantee a specific loved one will
+                        come through &mdash; spirit people who do step forward
+                        always come for your highest and best good. I recommend
+                        you take notes or audio-record the reading, because some
+                        details may make sense later.
+                    </p>
+                    <p>
+                        During the evidential portion of the reading, please
+                        respond only with &ldquo;Yes&rdquo;, &ldquo;No&rdquo;,
+                        &ldquo;I don't know&rdquo;, &ldquo;I'm not sure&rdquo;,
+                        or &ldquo;Need more info&rdquo;. I'll always treat you
+                        and those in spirit with compassion and respect &mdash;
+                        messages are supportive and positive. Each reading
+                        reserves time at the end for feedback. I can't wait to
+                        work with you!
+                    </p>
+                    <p>
+                        For a fuller list of common questions, see the
+                        <a href="faq.html">F.A.Q. page</a>.
+                    </p>
 
-        <h2 id="cancellation">Cancellation policy</h2>
-        <p>
-          If you need to cancel your appointment for any reason, you must do so at least 24 hours before your appointment time in order to receive a full refund or reschedule your session. Cancellations made within fewer than 24 hours of your appointment will not receive a refund.
-        </p>
-        <p>
-          Cancellations and rescheduling must be done in writing via email to <a href="mailto:carolchasemedium@gmail.com">carolchasemedium@gmail.com</a>. If you are more than 10 minutes late, your appointment is considered a no-show, and no refund or reschedule will be given.
-        </p>
-      </div>
-    </section>
+                    <h2 id="cancellation">Cancellation policy</h2>
+                    <p>
+                        If you need to cancel your appointment for any reason,
+                        you must do so at least 24 hours before your appointment
+                        time in order to receive a full refund or reschedule
+                        your session. Cancellations made within fewer than 24
+                        hours of your appointment will not receive a refund.
+                    </p>
+                    <p>
+                        Cancellations and rescheduling must be done in writing
+                        via email to
+                        <a href="mailto:carolchasemedium@gmail.com"
+                            >carolchasemedium@gmail.com</a
+                        >. If you are more than 10 minutes late, your
+                        appointment is considered a no-show, and no refund or
+                        reschedule will be given.
+                    </p>
+                </div>
+            </section>
+        </main>
 
-  </main>
+        <footer class="site-footer">
+            <div class="container">
+                <nav class="footer-nav" aria-label="Footer navigation">
+                    <a href="about.html">About</a>
+                    <a href="faq.html">F.A.Q.</a>
+                    <a href="services.html">Services &amp; Pricing</a>
+                    <a href="grief-support.html">Grief Support</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+                <p class="disclaimer">
+                    Please note that this is not a psychic reading. Mediumship
+                    focuses on connecting with loved ones in Spirit rather than
+                    predicting future events or giving life advice. Every
+                    session unfolds naturally according to the needs of Spirit
+                    and the sitter. Sessions are offered for spiritual and
+                    personal-growth purposes; results cannot be guaranteed.
+                    Mediumship is not a substitute for medical, psychological,
+                    legal, or financial advice.
+                </p>
+                <p class="copyright">
+                    &copy; <span id="year">2026</span> Carol Chase. All rights
+                    reserved.
+                </p>
+            </div>
+        </footer>
 
-  <footer class="site-footer">
-    <div class="container">
-      <nav class="footer-nav" aria-label="Footer navigation">
-        <a href="about.html">About</a>
-        <a href="faq.html">F.A.Q.</a>
-        <a href="services.html">Services &amp; Pricing</a>
-        <a href="grief-support.html">Grief Support</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-      <p class="disclaimer">
-        Please note that this is not a psychic reading. Mediumship focuses on connecting with loved ones in Spirit rather than predicting future events or giving life advice. Every session unfolds naturally according to the needs of Spirit and the sitter. Sessions are offered for spiritual and personal-growth purposes; results cannot be guaranteed. Mediumship is not a substitute for medical, psychological, legal, or financial advice.
-      </p>
-      <p class="copyright">
-        &copy; <span id="year">2026</span> Carol Chase. All rights reserved.
-      </p>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    document.querySelectorAll('.nav-list a, .footer-nav a').forEach(a => {
-      if (a.pathname === window.location.pathname) a.classList.add('active');
-    });
-  </script>
-</body>
+        <script>
+            document.getElementById("year").textContent =
+                new Date().getFullYear();
+            document
+                .querySelectorAll(".nav-list a, .footer-nav a")
+                .forEach((a) => {
+                    if (a.pathname === window.location.pathname)
+                        a.classList.add("active");
+                });
+        </script>
+    </body>
 </html>
