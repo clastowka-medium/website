@@ -226,7 +226,9 @@ blockquote {
   border-radius: var(--radius);
   box-shadow: 0 30px 80px -30px rgba(45, 106, 122, 0.45);
   object-fit: cover;
+  object-position: top;
   aspect-ratio: 4 / 5;
+  border: 3px solid #3b6d9c;
 }
 
 
