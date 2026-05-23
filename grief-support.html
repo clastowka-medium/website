@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!-- Grief Support page. Header/footer are shared — see index.html. -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grief Support — Carol Chase, Certified Grief Educator</title>
+  <meta name="description" content="Carol Chase is a Certified Grief Educator trained by David Kessler. Compassionate, trauma-informed grief support one-on-one, in groups, or online." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand">
+        <span class="brand-name">Carol Chase</span>
+        <span class="brand-tagline">Heart-Centered Mediumship</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/faq.html">F.A.Q.</a></li>
+          <li><a href="/services.html">Services &amp; Pricing</a></li>
+          <li><a href="/grief-support.html">Grief Support</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/services.html#booking" class="nav-cta">Book a Reading</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="container narrow center">
+        <p class="eyebrow">Grief Support</p>
+        <h1>A guide and companion through grief</h1>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grief-inner">
+        <div class="grief-copy">
+          <p>
+            Grief is profound and often lonely. We live in a grief-illiterate society. People don't need someone to fix them &mdash; they need a guide and companion. Someone who understands that loss changes us, and that we can honor our loved ones while creating a new chapter.
+          </p>
+          <p>
+            I'm here to witness your experience, help you understand what you're feeling, and support you as you find your way forward. I work with people one-on-one, in groups, or online &mdash; whatever serves them best.
+          </p>
+
+          <h2>What is a Certified Grief Educator?</h2>
+          <p>
+            A Certified Grief Educator is committed to providing the highest level of grief support through education, experience, and insights into the often unacknowledged rocky terrain of grief.
+          </p>
+          <p>
+            I have completed a Certified Grief Educator certificate program designed by world-renowned grief expert <strong>David Kessler</strong>. I bring his unique methodology, tools, and decades of experience to help people navigate the challenges of grief.
+          </p>
+          <p class="teachers">
+            <strong>Teachers:</strong> Rev. Joe Shiel &middot; David Kessler &middot; Simone Key
+          </p>
+        </div>
+        <figure class="grief-badge">
+          <img src="/images/grief-educator-badge.jpg" alt="Certified Grief Educator badge, awarded by David Kessler and grief.com." />
+        </figure>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container center">
+        <h2>Reach out</h2>
+        <p class="lede">To inquire about grief support sessions, please get in touch.</p>
+        <a href="/contact.html" class="btn btn-primary">Contact Carol</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="/about.html">About</a>
+        <a href="/faq.html">F.A.Q.</a>
+        <a href="/services.html">Services &amp; Pricing</a>
+        <a href="/grief-support.html">Grief Support</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+      <p class="disclaimer">
+        Please note that this is not a psychic reading. Mediumship focuses on connecting with loved ones in Spirit rather than predicting future events or giving life advice. Every session unfolds naturally according to the needs of Spirit and the sitter. Sessions are offered for spiritual and personal-growth purposes; results cannot be guaranteed. Mediumship is not a substitute for medical, psychological, legal, or financial advice.
+      </p>
+      <p class="copyright">
+        &copy; <span id="year">2026</span> Carol Chase. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.querySelectorAll('.nav-list a, .footer-nav a').forEach(a => {
+      if (a.pathname === window.location.pathname) a.classList.add('active');
+    });
+  </script>
+</body>
+</html>

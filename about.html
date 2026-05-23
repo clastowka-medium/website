@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!-- About page. Header/footer are shared with all other pages — see index.html. -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Carol Chase — Heart-Centered Mediumship</title>
+  <meta name="description" content="Carol Chase, M.A. — Evidential Medium and Certified Grief Educator. Carol's personal story of how she came to mediumship." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand">
+        <span class="brand-name">Carol Chase</span>
+        <span class="brand-tagline">Heart-Centered Mediumship</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/faq.html">F.A.Q.</a></li>
+          <li><a href="/services.html">Services &amp; Pricing</a></li>
+          <li><a href="/grief-support.html">Grief Support</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/services.html#booking" class="nav-cta">Book a Reading</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="container narrow center">
+        <p class="eyebrow">About</p>
+        <h1>Our Loved Ones Are Still Here &mdash; <em>And They Want to Stay In Touch</em></h1>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container about-inner">
+        <figure class="about-portrait">
+          <img src="/images/carol-portrait.jpg" alt="Portrait of Carol Chase." />
+          <figcaption>
+            <strong>Carol Chase, M.A.</strong><br />
+            Evidential Medium &middot; Certified Grief Educator<br />
+            Delaware County, PA
+          </figcaption>
+        </figure>
+        <div class="about-copy">
+          <p>
+            I was raised with stories of relatives coming back to visit after they'd died: my uncle's rocking chair that moved by itself, my aunt's uneven footsteps in the hallway, a ball of blue light rising out of my great aunt's body, circling the room, then disappearing at the moment she passed. My own first experiences of spirit visitations happened when I was a young adult when two of my grandparents visited me in dreams to say goodbye. I didn't think it was strange, because I'd grown up with a strong belief in the afterlife, supported by these family stories and my own faith.
+          </p>
+          <p>
+            A number of years later, my brother-in-law Senad passed unexpectedly, and as I was sitting quietly I heard him say, &ldquo;Tell your sister I'm okay. I'm FINE!&rdquo; While my sister was still grieving, just two years later, the unthinkable happened to me: my beloved husband Greg crossed over after a year-long illness. And since that time, he's been communicating with me. He has sent me messages in many creative ways that you'll be able to read about in my forthcoming book. His body may have died, but his spirit is alive and thriving. He has shown me without a doubt that he's still here, watching over our family with love.
+          </p>
+          <p>
+            After Greg passed, all that I had to do was sit, be still, and wait for the messages from Spirit. They started pouring in, and often it was with a directive to &ldquo;tell Sue I'm looking out for her&rdquo; or &ldquo;tell Bob I'm happy he found a new wife.&rdquo; Or, &ldquo;Tell my mom that I'm okay.&rdquo; But the spirits don't just give messages, they come with evidential information: the tattoo on the right forearm, the corn cob pipe that's been passed down for generations, the turtle figurine gifted from grandma just before she crossed over.
+          </p>
+          <p class="closing">
+            One thing is clear: our loved ones want to continue to be in relationship with us. My dream is to make that possible for everyone who wants to establish communication with their loved ones in spirit.
+          </p>
+          <p class="teachers">
+            <strong>Mentors &amp; Teachers:</strong> Rev. Joe Shiel &middot; David Kessler &middot; Simone Key
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container center">
+        <h2>Book a session with Carol</h2>
+        <a href="/services.html#booking" class="btn btn-primary">View Services &amp; Booking</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="/about.html">About</a>
+        <a href="/faq.html">F.A.Q.</a>
+        <a href="/services.html">Services &amp; Pricing</a>
+        <a href="/grief-support.html">Grief Support</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+      <p class="disclaimer">
+        Please note that this is not a psychic reading. Mediumship focuses on connecting with loved ones in Spirit rather than predicting future events or giving life advice. Every session unfolds naturally according to the needs of Spirit and the sitter. Sessions are offered for spiritual and personal-growth purposes; results cannot be guaranteed. Mediumship is not a substitute for medical, psychological, legal, or financial advice.
+      </p>
+      <p class="copyright">
+        &copy; <span id="year">2026</span> Carol Chase. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.querySelectorAll('.nav-list a, .footer-nav a').forEach(a => {
+      if (a.pathname === window.location.pathname) a.classList.add('active');
+    });
+  </script>
+</body>
+</html>
