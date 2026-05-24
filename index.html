@@ -85,36 +85,39 @@
       <div class="container">
         <p class="eyebrow center">Testimonials</p>
         <h2 class="center">What clients say</h2>
-        <div class="testimonial-grid">
+        <div class="testimonial-carousel">
+          <div class="testimonial-grid">
 
-          <figure class="testimonial">
-            <blockquote>
-              Thank you very much for your Wonderful and Amazing Evidential Mediumship Reading. You were Spot-On! Your reading brought me happiness, comfort and healing.
-            </blockquote>
-            <figcaption>&mdash; Carolyn H.</figcaption>
-          </figure>
+            <figure class="testimonial">
+              <blockquote>
+                Thank you very much for your Wonderful and Amazing Evidential Mediumship Reading. You were Spot-On! Your reading brought me happiness, comfort and healing.
+              </blockquote>
+              <figcaption>&mdash; Carolyn H.</figcaption>
+            </figure>
 
-          <figure class="testimonial">
-            <blockquote>
-              Carol is an AMAZING medium! She is very kind, warm, welcoming, and thoughtful. The way she initiated the reading that she did for me was performed with such a delicate, gracious, and heartfelt approach. I had a dear friend of mine commit suicide about a year ago which struck my soul in ways I could not even comprehend, making it so much harder to imagine receiving closure as a possibility; but, then Carol brought that kind of loss into life. She made it possible for me to connect with my friend again, and the closure was as clear as day. I was in tears! Her ability to build a bridge into the spiritual realm is beyond profound. What felt so lost and intangible for me was then finally found. She is a true gift! Thank you Carol!
-            </blockquote>
-            <figcaption>&mdash; Felicia L.</figcaption>
-          </figure>
+            <figure class="testimonial">
+              <blockquote>
+                Carol is an AMAZING medium! She is very kind, warm, welcoming, and thoughtful. The way she initiated the reading that she did for me was performed with such a delicate, gracious, and heartfelt approach. I had a dear friend of mine commit suicide about a year ago which struck my soul in ways I could not even comprehend, making it so much harder to imagine receiving closure as a possibility; but, then Carol brought that kind of loss into life. She made it possible for me to connect with my friend again, and the closure was as clear as day. I was in tears! Her ability to build a bridge into the spiritual realm is beyond profound. What felt so lost and intangible for me was then finally found. She is a true gift! Thank you Carol!
+              </blockquote>
+              <figcaption>&mdash; Felicia L.</figcaption>
+            </figure>
 
-          <figure class="testimonial">
-            <blockquote>
-              Carol is very friendly and professional, creating a safe and loving space. Great energy! I love that she brought in my grandparents together. The sewing references were spot on!
-            </blockquote>
-            <figcaption>&mdash; Charlene H.</figcaption>
-          </figure>
+            <figure class="testimonial">
+              <blockquote>
+                Carol is very friendly and professional, creating a safe and loving space. Great energy! I love that she brought in my grandparents together. The sewing references were spot on!
+              </blockquote>
+              <figcaption>&mdash; Charlene H.</figcaption>
+            </figure>
 
-          <figure class="testimonial">
-            <blockquote>
-              Carol, thank you so much for connecting me with my beloved mother today. I had no doubt that she was present with us. Your perception of her putting on red lipstick was particularly meaningful to me. One of my strongest memories of my childhood is of watching her getting dressed up to go dancing with my father and putting on red lipstick! So that evidence was very special for me. Thank you, too, for the extensive messages you relayed to me from her. It was as if she were talking directly to me, as everything you expressed is what she advised me, my siblings, and others in life.
-            </blockquote>
-            <figcaption>&mdash; Karen V.</figcaption>
-          </figure>
+            <figure class="testimonial">
+              <blockquote>
+                Carol, thank you so much for connecting me with my beloved mother today. I had no doubt that she was present with us. Your perception of her putting on red lipstick was particularly meaningful to me. One of my strongest memories of my childhood is of watching her getting dressed up to go dancing with my father and putting on red lipstick! So that evidence was very special for me. Thank you, too, for the extensive messages you relayed to me from her. It was as if she were talking directly to me, as everything you expressed is what she advised me, my siblings, and others in life.
+              </blockquote>
+              <figcaption>&mdash; Karen V.</figcaption>
+            </figure>
 
+          </div>
+          <button class="carousel-next" aria-label="Next testimonials">&#8250;</button>
         </div>
       </div>
     </section>
@@ -154,6 +157,26 @@
     document.querySelectorAll('.nav-list a, .footer-nav a').forEach(a => {
       if (a.pathname === window.location.pathname) a.classList.add('active');
     });
+
+    // Testimonial carousel
+    (function () {
+      var items = Array.from(document.querySelectorAll('#testimonials .testimonial'));
+      var total = items.length;
+      var visible = 3;
+      var current = 0;
+      function show() {
+        items.forEach(function (item, i) {
+          var inView = false;
+          for (var j = 0; j < visible; j++) {
+            if (i === (current + j) % total) inView = true;
+          }
+          item.style.display = inView ? '' : 'none';
+        });
+      }
+      var btn = document.querySelector('.carousel-next');
+      if (btn) btn.addEventListener('click', function () { current = (current + 1) % total; show(); });
+      show();
+    }());
   </script>
 </body>
 </html>
