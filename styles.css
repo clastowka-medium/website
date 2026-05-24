@@ -260,6 +260,7 @@ blockquote {
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
+  object-position: top;
 }
 .about-portrait figcaption {
   margin-top: var(--space-sm);
