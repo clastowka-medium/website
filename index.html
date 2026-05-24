@@ -165,13 +165,16 @@
       var visible = 3;
       var current = 0;
       function show() {
-        items.forEach(function (item, i) {
-          var inView = false;
-          for (var j = 0; j < visible; j++) {
-            if (i === (current + j) % total) inView = true;
+        for (var j = 0; j < total; j++) {
+          var idx = (current + j) % total;
+          if (j < visible) {
+            items[idx].style.display = '';
+            items[idx].style.order = j;
+          } else {
+            items[idx].style.display = 'none';
+            items[idx].style.order = '';
           }
-          item.style.display = inView ? '' : 'none';
-        });
+        }
       }
       var btn = document.querySelector('.carousel-next');
       if (btn) btn.addEventListener('click', function () { current = (current + 1) % total; show(); });
