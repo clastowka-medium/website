@@ -489,6 +489,7 @@ hr {
   .grief-badge img { max-width: 220px; }
   .nav-list { gap: var(--space-sm); }
   .nav-list li:not(:last-child) { display: none; }   /* mobile: only show the CTA, hide other links */
+  .brand-tagline { display: none; }                  /* mobile: hide tagline so nav button fits on one line */
   .section { padding: var(--space-lg) 0; }
   .hero { padding: var(--space-lg) 0; }
 }
