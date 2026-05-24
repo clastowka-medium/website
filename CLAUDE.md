@@ -1,5 +1,7 @@
 # CLAUDE.md — Editing playbook for Carol's website
 
+**Always use the `edit-website` skill for any changes to this site.** Do not make edits directly — invoke the skill first, every time, without exception.
+
 This file tells you (Claude) how this site is organized and how to help Carol update it. Read it first before making any change.
 
 ## What this site is
