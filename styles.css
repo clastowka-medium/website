@@ -89,9 +89,17 @@ h1, h2, h3 {
   margin: 0 0 var(--space-sm);
 }
 h1 { font-size: var(--size-h1); }
-h2 { font-size: var(--size-h2); margin-bottom: var(--space-md); }
+h2 { font-size: var(--size-h2); }
 h3 { font-size: var(--size-h3); }
 h1 em, h2 em { color: var(--color-accent); font-style: italic; }
+
+/* Mid-section headings get generous space above so they read as
+   the start of a new thought, then sit close to their first paragraph. */
+* + h2,
+* + h3 { margin-top: var(--space-lg); }
+.eyebrow + h1,
+.eyebrow + h2,
+.eyebrow + h3 { margin-top: 0; }
 
 p { margin: 0 0 1.2em; }
 a { color: var(--color-accent); text-decoration: underline; text-underline-offset: 3px; }
@@ -129,11 +137,18 @@ blockquote {
 .container {
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 0 var(--space-md);
+  /* Horizontal-only longhand so vertical padding on co-classed elements
+     (e.g. .container.header-inner) isn't zeroed out by the shorthand. */
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
 }
 .container.narrow { max-width: var(--container-narrow); }
 
-.section { padding: var(--space-xl) 0; }
+.section { padding: var(--space-lg) 0; }
+
+/* Page heroes already give breathing room below; reduce the next
+   section's top padding so the title and body content stay related. */
+.page-hero + .section { padding-top: var(--space-md); }
 
 
 /* ==========================================================
@@ -152,8 +167,8 @@ blockquote {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: var(--space-sm);
-  padding-bottom: var(--space-sm);
+  padding-top: 1.15rem;
+  padding-bottom: 1.25rem;
   gap: var(--space-md);
 }
 .brand { text-decoration: none; color: var(--color-text); display: flex; flex-direction: column; line-height: 1.1; }
@@ -173,8 +188,10 @@ blockquote {
   color: var(--color-text);
   font-size: 0.95rem;
   font-weight: 500;
+  white-space: nowrap;                    /* keep multi-word labels on one line */
 }
 .nav-list a:hover { color: var(--color-accent); }
+.nav-list li { flex-shrink: 0; }          /* prevent flex squeeze causing wrap */
 .nav-cta {
   background: var(--color-accent);
   color: var(--color-bg) !important;
@@ -313,59 +330,127 @@ blockquote {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--space-md);
   margin-top: var(--space-md);
+  align-items: stretch;
 }
 .testimonial {
   margin: 0;
   padding: var(--space-md);
-  background: var(--color-bg-alt);
+  background: var(--color-bg);
   border-radius: var(--radius);
-  border-top: 3px solid var(--color-accent-soft);
+  border: 1px solid var(--color-rule);
+  box-shadow: 0 2px 4px -2px rgba(45, 42, 38, 0.06),
+              0 12px 30px -18px rgba(45, 106, 122, 0.25);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+.testimonial::before {
+  content: "\201C";                       /* decorative opening quote */
+  position: absolute;
+  top: -0.15em;
+  left: 0.35rem;
+  font-family: var(--font-heading);
+  font-size: 5rem;
+  line-height: 1;
+  color: var(--color-accent-soft);
+  opacity: 0.55;
+  pointer-events: none;
 }
 .testimonial blockquote {
-  margin: 0 0 var(--space-sm);
-  padding: 0;
+  margin: 0 0 var(--space-md);
+  padding: 0.5rem 0 0;                    /* breathing room below decorative quote */
   background: none;
   border-left: none;
   font-style: italic;
   color: var(--color-text);
   font-size: 1rem;
+  line-height: 1.65;
+  flex: 1;                                /* push name to the bottom */
 }
 .testimonial figcaption {
   font-weight: 600;
   color: var(--color-accent);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  border-top: 1px solid var(--color-rule);
+  padding-top: var(--space-sm);
+  margin-top: auto;
 }
-.testimonial-carousel {
+
+/* Testimonials: horizontal scroller with snap-points. Native swipe on
+   touch; arrows in the section header scroll one card at a time. */
+.testimonials-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-md);
+}
+.testimonials-header .eyebrow { margin-bottom: 0.25rem; }
+.testimonials-header h2 { margin: 0; }
+
+.carousel-controls {
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
-  margin-top: var(--space-md);
+  gap: var(--space-xs);
 }
-.testimonial-carousel .testimonial-grid {
-  flex: 1;
-  margin-top: 0;
-  grid-template-columns: repeat(3, 1fr);
-}
-.carousel-next {
+.carousel-btn {
   flex-shrink: 0;
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  border: 2px solid var(--color-accent);
+  border: 1.5px solid var(--color-accent);
   background: transparent;
   color: var(--color-accent);
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   line-height: 1;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.2s, color 0.2s;
+  transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
   padding: 0;
+  font-family: var(--font-body);
 }
-.carousel-next:hover {
-  background: var(--color-accent);
-  color: #fff;
+.carousel-btn:hover { background: var(--color-accent); color: #fff; }
+.carousel-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+  background: transparent;
+  color: var(--color-accent);
+}
+
+.testimonial-scroller {
+  display: flex;
+  gap: var(--space-md);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.75rem;                /* room for thin scrollbar */
+  /* Negative margin + matching padding gives cards a generous "edge fade"
+     into the container padding so peeked cards don't feel clipped. */
+  margin: 0 calc(var(--space-md) * -1);
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
+  /* Snap to the inner-padding line so cards align with the container
+     content (not the viewport edge) when they lock into place. */
+  scroll-padding-left: var(--space-md);
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-accent-soft) transparent;
+}
+.testimonial-scroller::-webkit-scrollbar { height: 6px; }
+.testimonial-scroller::-webkit-scrollbar-track { background: transparent; }
+.testimonial-scroller::-webkit-scrollbar-thumb {
+  background: var(--color-accent-soft);
+  border-radius: 3px;
+}
+.testimonial-scroller .testimonial {
+  flex: 0 0 calc((100% - var(--space-md) * 2) / 3);   /* 3 cards visible */
+  scroll-snap-align: start;
+  min-width: 0;
 }
 
 
@@ -384,15 +469,35 @@ blockquote {
   padding: var(--space-md);
   border-radius: var(--radius);
   border: 1px solid var(--color-rule);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 4px -2px rgba(45, 42, 38, 0.06),
+              0 18px 40px -28px rgba(45, 106, 122, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.service:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px -2px rgba(45, 42, 38, 0.08),
+              0 24px 50px -28px rgba(45, 106, 122, 0.4);
 }
 .service h3 { margin-bottom: var(--space-xs); }
+.service > p:not(.service-price):not(.service-meta) {
+  flex: 1;                                /* push button to bottom */
+}
+.service .btn { align-self: flex-start; margin-top: var(--space-sm); }
 .service-price {
   font-family: var(--font-heading);
-  font-size: 2rem;
+  font-size: 2.4rem;
   color: var(--color-accent);
   margin: 0 0 0.2rem;
+  line-height: 1;
 }
-.service-meta { font-size: 0.9rem; color: var(--color-text-soft); margin-bottom: var(--space-sm); }
+.service-meta {
+  font-size: 0.85rem;
+  color: var(--color-text-soft);
+  margin-bottom: var(--space-sm);
+  letter-spacing: 0.02em;
+}
 
 .booking-widget { margin: var(--space-lg) 0; }
 .booking-placeholder {
@@ -480,16 +585,80 @@ hr {
 /* ==========================================================
    13. RESPONSIVE
    ========================================================== */
+
+/* Tablet: 2 cards visible in the scroller */
+@media (max-width: 1000px) {
+  .testimonial-scroller .testimonial {
+    flex-basis: calc((100% - var(--space-md)) / 2);
+  }
+}
+
+/* Awkward tablet-ish range: full nav + 6 items doesn't quite fit at the
+   2rem desktop gap. Tighten gaps, shrink font slightly, drop the
+   brand tagline so the nav has room to breathe. */
+@media (min-width: 801px) and (max-width: 1024px) {
+  .header-inner { gap: var(--space-sm); }
+  .nav-list { gap: var(--space-sm); }
+  .nav-list a { font-size: 0.88rem; }
+  .nav-cta { padding: 0.5rem 0.9rem; }
+  .brand-tagline { display: none; }
+}
+
 @media (max-width: 800px) {
   .hero-inner,
-  .grief-inner {
+  .grief-inner,
+  .about-inner {
     grid-template-columns: 1fr;
+    gap: var(--space-md);
   }
-  .hero-portrait { order: -1; max-width: 360px; margin: 0 auto; }
-  .grief-badge img { max-width: 220px; }
+  .hero-portrait { order: -1; max-width: 320px; margin: 0 auto; }
+  .grief-badge { order: -1; }
+  .grief-badge img { max-width: 200px; }
+  .about-portrait { max-width: 280px; margin: 0 auto; }
+
+  /* Testimonials: 1 card + a peek of the next, so the swipe affordance is visible */
+  .testimonial-scroller .testimonial {
+    flex-basis: 86%;
+  }
+  .testimonial { padding: var(--space-md) var(--space-sm) var(--space-sm); }
+  .testimonial::before { font-size: 4rem; }
+
+  /* Nav: keep CTA visible, hide rest (mobile menu would be the next step) */
   .nav-list { gap: var(--space-sm); }
-  .nav-list li:not(:last-child) { display: none; }   /* mobile: only show the CTA, hide other links */
-  .brand-tagline { display: none; }                  /* mobile: hide tagline so nav button fits on one line */
-  .section { padding: var(--space-lg) 0; }
+  .nav-list li:not(:last-child) { display: none; }
+  .brand-tagline { display: none; }
+
+  /* Section rhythm — tighter on mobile so content stays close together */
+  .section { padding: var(--space-md) 0; }
   .hero { padding: var(--space-lg) 0; }
+  .page-hero { padding: var(--space-md) 0 var(--space-sm); }
+  .cta-band { padding: var(--space-md) 0; }
+  /* Smaller jumps between mid-section headings on mobile */
+  * + h2, * + h3 { margin-top: var(--space-md); }
+
+  /* Less-aggressive container padding so content has room to breathe */
+  .container {
+    padding-left: var(--space-sm);
+    padding-right: var(--space-sm);
+  }
+  /* Match the scroller's negative-margin trick to the new container padding */
+  .testimonial-scroller {
+    margin: 0 calc(var(--space-sm) * -1);
+    padding-left: var(--space-sm);
+    padding-right: var(--space-sm);
+    scroll-padding-left: var(--space-sm);
+  }
+
+  /* CTA buttons stretch but stay paired */
+  .cta-row .btn { flex: 1 1 auto; text-align: center; }
+}
+
+/* Very narrow phones: tighten typography */
+@media (max-width: 420px) {
+  :root {
+    --size-h3: 1.25rem;
+    --size-lede: 1.1rem;
+  }
+  .service-price { font-size: 2rem; }
+  .testimonial { padding: var(--space-sm); }
 }

@@ -83,10 +83,17 @@
     <!-- TESTIMONIALS -->
     <section id="testimonials" class="section">
       <div class="container">
-        <p class="eyebrow center">Testimonials</p>
-        <h2 class="center">What clients say</h2>
-        <div class="testimonial-carousel">
-          <div class="testimonial-grid">
+        <div class="testimonials-header">
+          <div>
+            <p class="eyebrow">Testimonials</p>
+            <h2>What clients say</h2>
+          </div>
+          <div class="carousel-controls">
+            <button class="carousel-btn carousel-prev" aria-label="Previous testimonial" aria-controls="testimonial-scroller">&#8249;</button>
+            <button class="carousel-btn carousel-next" aria-label="Next testimonial" aria-controls="testimonial-scroller">&#8250;</button>
+          </div>
+        </div>
+        <div class="testimonial-scroller" id="testimonial-scroller" role="region" aria-label="Client testimonials" tabindex="0">
 
             <figure class="testimonial">
               <blockquote>
@@ -123,8 +130,6 @@
               <figcaption>&mdash; Sabrina S.</figcaption>
             </figure>
 
-          </div>
-          <button class="carousel-next" aria-label="Next testimonials">&#8250;</button>
         </div>
       </div>
     </section>
@@ -165,27 +170,34 @@
       if (a.pathname === window.location.pathname) a.classList.add('active');
     });
 
-    // Testimonial carousel
+    // Testimonial scroller: native horizontal scroll + scroll-snap on touch.
+    // Arrow buttons scroll by one card width; disable at start/end.
     (function () {
-      var items = Array.from(document.querySelectorAll('#testimonials .testimonial'));
-      var total = items.length;
-      var visible = 3;
-      var current = 0;
-      function show() {
-        for (var j = 0; j < total; j++) {
-          var idx = (current + j) % total;
-          if (j < visible) {
-            items[idx].style.display = '';
-            items[idx].style.order = j;
-          } else {
-            items[idx].style.display = 'none';
-            items[idx].style.order = '';
-          }
-        }
+      var scroller = document.getElementById('testimonial-scroller');
+      if (!scroller) return;
+      var prevBtn = document.querySelector('.carousel-prev');
+      var nextBtn = document.querySelector('.carousel-next');
+
+      function stepWidth() {
+        var card = scroller.querySelector('.testimonial');
+        if (!card) return scroller.clientWidth;
+        var gap = parseFloat(getComputedStyle(scroller).columnGap || getComputedStyle(scroller).gap) || 16;
+        return card.getBoundingClientRect().width + gap;
       }
-      var btn = document.querySelector('.carousel-next');
-      if (btn) btn.addEventListener('click', function () { current = (current + 1) % total; show(); });
-      show();
+
+      function updateButtons() {
+        if (!prevBtn || !nextBtn) return;
+        var max = scroller.scrollWidth - scroller.clientWidth;
+        prevBtn.disabled = scroller.scrollLeft <= 1;
+        nextBtn.disabled = scroller.scrollLeft >= max - 1;
+      }
+
+      if (prevBtn) prevBtn.addEventListener('click', function () { scroller.scrollBy({ left: -stepWidth(), behavior: 'smooth' }); });
+      if (nextBtn) nextBtn.addEventListener('click', function () { scroller.scrollBy({ left:  stepWidth(), behavior: 'smooth' }); });
+
+      scroller.addEventListener('scroll', updateButtons, { passive: true });
+      window.addEventListener('resize', updateButtons);
+      updateButtons();
     }());
   </script>
 </body>
